@@ -1,0 +1,10 @@
+{
+
+    "mongoURI" 
+    :"mongodb+srv://ashritha27:ashritha27@cluster0.4r4hq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtsecret" :"mysecrettoken",
+    "githibclientid" : "007e3429fe0824a10b21",
+    "githubsecret":"5f7a168eb794c72c4ac36af6bb6bfc8e1787f715"
+
+
+}
