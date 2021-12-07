@@ -1,7 +1,7 @@
 import React , { Fragment , useState ,useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile ,getCurrentProfile} from '../actions/profile';
+import { createProfile ,getCurrentProfile} from '../../actions/profile';
 import { Link , withRouter } from 'react-router-dom';
 
 
@@ -50,7 +50,7 @@ const EditProfile = ( { profile : { profile,loading }, createProfile ,getCurrent
 
     const onSubmit = e => {
       e.preventDefault();
-      createProfile(form,history,true);
+      createProfile(formData,history,true);
 
     }
 
@@ -184,13 +184,13 @@ const EditProfile = ( { profile : { profile,loading }, createProfile ,getCurrent
 };
 
 
-EditProfile.PropTypes ={
+EditProfile.propTypes = {
     createProfile: PropTypes.func.isRequired,
     profile : PropTypes.object.isRequired,
     getCurrentProfile : PropTypes.func.isRequired
 };
 
-const mapStateToProps = state = ({
+const mapStateToProps = state => ({
     profile : state.profile
 });
 

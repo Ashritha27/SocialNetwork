@@ -1,7 +1,7 @@
 import React , { Fragment , useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile} from '../actions/profile';
+import { createProfile } from '../../actions/profile';
 import { Link , withRouter } from 'react-router-dom';
 
 
@@ -30,7 +30,7 @@ const CreateProfile = ( { createProfile ,history }) => {
 
     const onSubmit = e => {
       e.preventDefault();
-      createProfile(form,history,true);
+      createProfile(formData,history,true);
 
     }
 
@@ -164,7 +164,7 @@ const CreateProfile = ( { createProfile ,history }) => {
 }
 
 
-CreateProfile.PropTypes ={
+CreateProfile.propTypes ={
     createProfile: PropTypes.func.isRequired
 };
 

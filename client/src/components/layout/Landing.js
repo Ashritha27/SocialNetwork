@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link ,Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import reducers from '../../reducers';
@@ -28,11 +28,11 @@ const Landing = ({ isAuthenticated}) => {
     )
 }
 
-Landing.PropTypes = {
+Landing.propTypes = {
     isAuthenticated : PropTypes.bool
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated = stat.auth.isAuthenticated,
+  isAuthenticated : state.auth.isAuthenticated 
 });
 export default connect(mapStateToProps)(Landing);
