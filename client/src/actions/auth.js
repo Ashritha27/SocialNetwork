@@ -77,7 +77,7 @@ export const login =( email , password) => async dispatch => {
         }
     }
 
-    const body = JSON.stringify({email,password});
+    const body = JSON.stringify( {email,password} );
 
     try{
 
@@ -91,7 +91,6 @@ export const login =( email , password) => async dispatch => {
         dispatch(loadUser());
 
     }catch(err){
-
         const errors = err.response.data.errors;
 
         if(errors){

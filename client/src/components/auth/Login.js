@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {login} from '../../actions/auth';
 const Login = ( { login ,isAuthenticated}) => {
-
+    
     const [formData ,setFormData] = useState({
         
         email:'',
@@ -13,17 +13,13 @@ const Login = ( { login ,isAuthenticated}) => {
        
     });
 
-    const {email,password} =formData;
+    const {email,password} = formData;
 
-    const onChange = e => setFormData({...formData , [e.target.name] : e.target.value});
+    const onChange = (e) => 
+    setFormData({...formData , [e.target.name] : e.target.value} , []);
 
-    const onSubmit =async e => {
+    const onSubmit = (e) => {
         e.preventDefault();
-        // if(password !== password2){
-        //     console.log('passwords doont match');
-        // }
-        // else{
-        // }
         login(email,password);
     }
 
@@ -35,13 +31,13 @@ const Login = ( { login ,isAuthenticated}) => {
         <Fragment>
             <h1 className="large text-primary">Sign Up</h1>
             <p className="lead"><i className="fas fa-user"></i> Sign in your Account</p>
-            <form className="form" onSubmit={e=>onSubmit(e)}>
+            <form className="form" onSubmit={onSubmit}>
                
                
                 <div className="form-group">
                 <input type="email" placeholder="Email Address" name="email" 
                 value={email}
-                onChange={e => onChange(e)}
+                onChange={onChange}
                 required />
                 </div>
                 <div className="form-group">
@@ -51,7 +47,7 @@ const Login = ( { login ,isAuthenticated}) => {
                     name="password"
                     minLength="6"
                     value={password}
-                    onChange={e => onChange(e)}
+                    onChange={onChange}
                     required
                 />
                 </div>
@@ -61,8 +57,8 @@ const Login = ( { login ,isAuthenticated}) => {
                 Dont have an account? <Link to="/register">Sign up</Link>
             </p>
         </Fragment>
-    )
-}
+    );
+};
 
 
 login.PropTypes = {
@@ -76,4 +72,4 @@ const mapStateToProps = state => (
     }
 );
 
-export default connect(null , {login}) (Login)
+export default connect(mapStateToProps , {login}) (Login)

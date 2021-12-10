@@ -11,7 +11,7 @@ from  './types';
 export const getCurrentProfile = () => async dispatch => {
     try{
 
-        const res = await axios.get('/api/profile/me');
+        const res = await axios.get('/api/profiles/me');
 
         dispatch({
             type : GET_PROFILE,
@@ -35,7 +35,7 @@ export const createProfile = (formData, history ,edit =false) => async dispatch 
             }
         }
 
-        const res = await axios.post('/api/profile', formData,config);
+        const res = await axios.post('/api/profiles', formData,config);
 
         dispatch({
             type:GET_PROFILE,

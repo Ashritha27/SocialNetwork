@@ -38,8 +38,8 @@ const App = ()=>
       <Route exact path='/register' component={Register}/>
       <Route exact path='/login' component={Login}/>
        <PrivateRoute Route exact path='/dashboard' component={Dashboard}/>
-      {/*<PrivateRoute Route exact path='/create-profile' component={CreateProfile}/>
-      <PrivateRoute Route exact path='/edit-profile' component={EditProfile}/>  */}
+      <PrivateRoute Route exact path='/create-profile' component={CreateProfile}/>
+      <PrivateRoute Route exact path='/edit-profile' component={EditProfile}/> 
 
     </Switch>
   </section>

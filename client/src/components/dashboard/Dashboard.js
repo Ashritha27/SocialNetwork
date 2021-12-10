@@ -7,28 +7,35 @@ import Spinner from '../layout/Spinner';
 import Fragment from 'react';
 import DashboardActions from './DashboardActions';
 
-const Dashboard = ({ getCurrentProfile , auth : {user},profile : {profile ,loading}}) => {
+const Dashboard = ({ 
+     getCurrentProfile ,
+     auth : {user},
+     profile : {profile  }}) => {
 
     useEffect( () => {
         getCurrentProfile()
-    } , []);
-    return loading && profile === null ? <Spinner /> : <Fragment>
-        <h1 className="large text-primary">
-            Dashboard
-        </h1>
-        <p className="lead">
-            <i className="fas fa-user"></i>
-            Welcome { user && user.name}
-        </p>
-        {profile !==null ? 
-        <Fragment>
-            <DashboardActions />
-        </Fragment> :
-        <Fragment> You have not set up  a profile ,please add some info</Fragment>}
-        <Link to ='/create-profile' className="btn btn-primary my-1" >
-            Create profile
-        </Link>
-    </Fragment>
+    } , [getCurrentProfile]);
+
+    return (
+        <section className="container">
+          <h1 className="large text-primary">Dashboard</h1>
+          <p className="lead">
+            <i className="fas fa-user" /> Welcome {user && user.name}
+          </p>
+          {profile !== null ? (
+            <>
+              <DashboardActions />
+            </>
+          ) : (
+            <>
+              <p>You have not yet setup a profile, please add some info</p>
+              <Link to="/create-profile" className="btn btn-primary my-1">
+                Create Profile
+              </Link>
+            </>
+          )}
+        </section>
+    );
 };
 
 Dashboard.propTypes = {
@@ -42,4 +49,4 @@ const mapStateToProps =  state => ({
     profile : state.profile
 });
 
-export default  connect (mapStateToProps, { getCurrentProfile})(Dashboard);
+export default connect(mapStateToProps, { getCurrentProfile})(Dashboard);
