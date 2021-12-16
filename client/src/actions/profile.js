@@ -254,7 +254,7 @@ const errors = err.response.data.errors;
 export const deleteProfile = () => async dispatch => {
     if(window.confirm('Are you sure you want to delete?')){
         try{
-            const res = await axios.delete(`/api/profiles`);
+            await axios.delete(`/api/profiles`);
     
             dispatch({
                 type:CLEAR_PROFILE
