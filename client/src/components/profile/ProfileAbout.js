@@ -36,10 +36,10 @@ const ProfileAbout = ({profile : {
 
 ProfileAbout.propTypes = {
 
-    profile:PropTypes.object.isRequired,
+    profile:PropTypes.object.isRequired
 
 
 }
 
 
-export default (ProfileAbout);
+export default ProfileAbout;

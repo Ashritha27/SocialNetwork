@@ -1,7 +1,9 @@
 import React , {Fragment, useEffect} from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Moment from 'react-moment'
+import Moment from 'react-moment';
+
+
 const ProfileExperience = ({
     experience :{ company,location ,title,current,to ,from ,description }
 }) => {
@@ -24,4 +26,4 @@ ProfileExperience.propTypes = {
 }
 
 
-export default (ProfileExperience);
+export default ProfileExperience;

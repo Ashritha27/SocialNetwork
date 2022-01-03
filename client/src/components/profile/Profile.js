@@ -31,23 +31,23 @@ const Profile = ({
                 <ProfileAbout profile = {profile} />
                 <div className="profile-exp bg-white p-2">
                 <h2 class="text-primary">Experience</h2>
-                 {profile.experience.length > 0 ? (<Fragment>
-                     {profile.experience.map((exp )=> (
-                            <ProfileExperience experience={exp} key={experience._id} />
+                 {profile !== null && profile.experience.length > 0 ? (<Fragment>
+                     {profile.experience.map((exp)=> (
+                            <ProfileExperience experience={exp} key={exp._id} />
                      ))}
                  </Fragment>) : ( <h4> No experience creds </h4>) }
                 </div>
 
                 <div className="profile-edu bg-white p-2">
                 <h2 class="text-primary">Education</h2>
-                 {profile.education.length > 0 ? (<Fragment>
+                 {profile !== null && profile.education.length > 0 ? (<Fragment>
                      {profile.education.map((edu )=> (
-                            <ProfileEducation education={edu} key={education._id} />
+                            <ProfileEducation key={edu._id} education={edu}  />
                      ))}
                  </Fragment>) : ( <h4> No education creds </h4>) }
                 </div>
 
-                { profile.githubusername && (
+                { profile !== null && profile.githubusername && (
                     <></>
                 )}
             </div>
