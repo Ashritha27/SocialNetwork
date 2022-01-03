@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import Spinner from '../layout/Spinner';
 import {useEffect}  from 'react';
 import { getPosts } from '../../actions/posts';
-import Spinner from '../layout/Spinner'
 import PostItem from './PostItem'
 import PostForm from './PostForm';
 const Posts = ({ getPosts ,
@@ -27,7 +26,7 @@ post : {posts,loading}}) => {
         </div>
     </Fragment>
 }
-Posts.PropTypes = {
+Posts.propTypes = {
     getPosts :PropTypes.func.isRequired,
     post :PropTypes.object.isRequired
 
@@ -35,6 +34,6 @@ Posts.PropTypes = {
 
 
 const mapStateToProps = state => ({
-    post = state.post
+    post : state.post
 })
 export default connect(mapStateToProps,{getPosts})(Posts)

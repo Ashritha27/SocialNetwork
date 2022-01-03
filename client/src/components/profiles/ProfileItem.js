@@ -32,7 +32,7 @@ const ProfileItem = ({ profile : {
 }
 
 
-ProfileItem.PropTypes = {
+ProfileItem.propTypes = {
     profile :PropTypes.object.isRequired
 }
 

@@ -9,7 +9,7 @@ POST_ERROR}
  from '../actions/types'
 
 const initialState = {
-    posts = [],
+    posts : [],
     post : null,
     loading: true,
     error : {}

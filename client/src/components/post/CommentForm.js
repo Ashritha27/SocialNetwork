@@ -1,4 +1,4 @@
-import React ,{Fragment,useEffect } from 'react';
+import React ,{Fragment,useEffect,useState } from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Spinner from '../layout/Spinner'
@@ -34,9 +34,8 @@ const [text, setText] = useState('');
 
 }
 
-CommentForm.PropTypes = {
+CommentForm.propTypes = {
   addComment : PropTypes.func.isRequired
-
 }
 
 const mapStateToProps = state => {

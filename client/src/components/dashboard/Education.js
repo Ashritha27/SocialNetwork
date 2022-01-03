@@ -1,6 +1,9 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import {Link} from 'react-router-dom'; 
 import { deleteEducation } from '../../actions/profile';
+import Moment from 'react-moment';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux'
 const Education = ( {education , deleteEducation}) => {
     const educations = education.map(
         exp=> (

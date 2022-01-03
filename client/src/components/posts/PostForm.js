@@ -1,8 +1,8 @@
-import React , {Fragment} from 'react';
+import React , {Fragment,useState} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {connect  } from 'react-redux';
-import {addPost} from '../../actions/post'
+import {addPost} from '../../actions/posts'
 const PostForm = ({ addPost }) => {
     const [text ,setText] =useState('')
 
@@ -35,7 +35,7 @@ const PostForm = ({ addPost }) => {
 
 
 
-PostForm.PropTypes = {
+PostForm.propTypes = {
     addPost:PropTypes.func.isRequired
 }
 

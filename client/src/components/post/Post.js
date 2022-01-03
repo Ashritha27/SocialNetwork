@@ -2,10 +2,11 @@ import React ,{Fragment,useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Spinner from '../layout/Spinner'
-import {getPost} from '../../actions/post';
+import {getPost} from '../../actions/posts';
 import { getPosts } from '../../actions/posts';
 import PostItem from '../posts/PostItem';
 import CommentForm from './CommentForm';
+import {Link} from 'react-router-dom'
 const Post = ({
     getPost,
     post : { post,loading} ,
@@ -27,13 +28,13 @@ const Post = ({
 }
 
 
-Post.PropTypes = {
+Post.propTypes = {
     getPost :PropTypes.func.isRequired,
     post:PropTypes.object.isRequired
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => ({
     post:state.post
-}
+})
 
 export default Post

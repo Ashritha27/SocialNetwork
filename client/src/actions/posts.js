@@ -162,7 +162,7 @@ export const deleteComment = ( postId , commentId ) => async dispatch => {
 
         dispatch({
             type:REMOVE_COMMENT,
-            payload:res.data
+            
         });
 
 

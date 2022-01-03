@@ -30,7 +30,7 @@ const Profiles = ({getProfiles , profile : {profiles , loading}}) =>{
 };
 
 
-Profiles.PropTypes = {
+Profiles.propTypes = {
     getProfiles:PropTypes.func.isRequired,
     profile : PropTypes.object.isRequired
 }

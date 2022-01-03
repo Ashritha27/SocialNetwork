@@ -3,7 +3,7 @@ import {setAlert} from './alert'
 import { GET_PROFILES } from './types';
 import { DELETE_PROFILE } from './types';
 import { CLEAR_PROFILE } from './types';
-import { UPDATE_PROFILE } from './types';
+import { UPDATE_PROFILE,GET_REPOS } from './types';
 
 
 import {

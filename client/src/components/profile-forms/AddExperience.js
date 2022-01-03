@@ -2,7 +2,7 @@ import React , {Fragment ,useState} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {addExperience} from '../../actions/profile';
-
+import { Link } from 'react-router-dom';
 const AddExperience = ( { addExperience ,history }) => {
     const [formData ,setFormData] = useState({
         title : '',
@@ -78,7 +78,7 @@ const AddExperience = ( { addExperience ,history }) => {
     )
 }
 
-AddExperience.PropTypes = {
+AddExperience.propTypes = {
     addExperience : PropTypes.func.isRequired
 }
 

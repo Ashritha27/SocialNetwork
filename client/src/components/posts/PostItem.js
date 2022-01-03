@@ -1,10 +1,10 @@
 import React , {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import { addLike,removeLike } from '../../actions/posts';
-import Moment from 'react-momemt';
-import Link from 'react-router';
+import Moment from 'react-moment';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-
+import { deletePost } from '../../actions/posts';
 
 const PostItem = ({ showActions,
     addLike,removeLike,deletePost,
@@ -65,11 +65,11 @@ post : {
 
 }
 
-PostItems.defaultProps = {
+PostItem.defaultProps = {
     showActions:true
 }
 
-PostItem.PropTypes = {
+PostItem.propTypes = {
     auth :PropTypes.object.isRequired,
     post :PropTypes.object.isRequired,
     addLike:PropTypes.func.isRequired,
@@ -80,7 +80,7 @@ PostItem.PropTypes = {
 
 
 const mapStateToProps = state => ({
-    auth = state.auh
+    auth : state.auth
 })
 
 export default connect(mapStateToProps,{addLike,removeLike,deletePost})(PostItem)
